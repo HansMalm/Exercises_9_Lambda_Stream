@@ -16,10 +16,15 @@ public class Main {
                 new Person("Omar", 19, "Stockholm", true)
         );
 
-        //Core Task 2 write rules for active, adult and lives in Stockholm
+        //Core Task 2 write rules for active, adult and lives in Stockholm.
         PersonRule isActive = (person) -> person.isActive();
         PersonRule isAdult = (person) -> person.getAge() >= 18;
         PersonRule livesInStockholm = (person) -> person.getCity().equals("Stockholm");
+
+        //Core Task 4 write actions to print a name and send email.
+        PersonAction printName = (Person person) -> System.out.println(person.getName());
+        PersonAction printEmail = (Person person) -> System.out.println("Send email to " + person.getName() + ".");
+
 
     }
         //Core Task 3 write a filterPeople method that uses PersonRule.
