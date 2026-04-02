@@ -15,5 +15,9 @@ public class Main {
                 new Person("Omar", 19, "Stockholm", true)
         );
 
+        PersonRule isActive = (person) -> person.isActive();
+        PersonRule isAdult = (person) -> person.getAge() >= 18;
+        PersonRule livesInStockholm = (person) -> person.getCity().equals("Stockholm");
+
     }
 }
