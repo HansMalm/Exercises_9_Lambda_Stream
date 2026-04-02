@@ -1,5 +1,6 @@
 package Lexicon.Hans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -15,9 +16,20 @@ public class Main {
                 new Person("Omar", 19, "Stockholm", true)
         );
 
+        //Core Task 2 write rules for active, adult and lives in Stockholm
         PersonRule isActive = (person) -> person.isActive();
         PersonRule isAdult = (person) -> person.getAge() >= 18;
         PersonRule livesInStockholm = (person) -> person.getCity().equals("Stockholm");
 
+    }
+        //Core Task 3 write a filterPeople method that uses PersonRule.
+        public static List<Person> filterPeople (List<Person> personList, PersonRule filter) {
+            List<Person> filteredList = new ArrayList<>();
+            for (Person person : personList) {
+                if (filter.rule(person)) {
+                    filteredList.add(person);
+                }
+            }
+            return filteredList;
     }
 }
